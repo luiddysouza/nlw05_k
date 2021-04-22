@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nlw05_k/challenge/challenge_page.dart';
 import 'package:nlw05_k/home/home_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -6,7 +7,7 @@ class AppWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "DevQuiz",
-      home: HomePage(),
+      home: ChallengePage(),
     );
   }
 }
