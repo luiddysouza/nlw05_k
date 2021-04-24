@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nlw05_k/challenge/challenge_page.dart';
 import 'package:nlw05_k/challenge/widgets/quiz/quiz_widget.dart';
 import 'package:nlw05_k/core/core.dart';
 import 'package:nlw05_k/home/widgets/quiz_card/quiz_card_widget.dart';
@@ -69,11 +70,16 @@ class _HomePageState extends State<HomePage> {
                     crossAxisCount: 2,
                     children: controller.quizzes!
                         .map((e) => QuizCardWidget(
-                              title: e.title,
-                              percent: e.questionAnswered / e.questions.length,
-                              completed:
-                                  "${e.questionAnswered}/${e.questions.length}",
-                            ))
+                            title: e.title,
+                            percent: e.questionAnswered / e.questions.length,
+                            completed:
+                                "${e.questionAnswered}/${e.questions.length}",
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => ChallengePage(questions: e.questions)));
+                            }))
                         .toList(),
                   ),
                 )
